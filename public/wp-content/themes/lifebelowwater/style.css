@@ -1,0 +1,656 @@
+/*
+Theme Name: Life Below Water
+Author: Lea, Louise, Lærke & Anne-Sophie
+Description: A WordPress theme for the Life Below Water website.
+*/
+
+/* Anvend skrifttypen på hele siden */
+body {
+    font-family: 'Roboto', sans-serif; /* Erstat 'Roboto' med din ønskede skrifttype */
+    margin: 0;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 700; /* Fed vægt */
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: 700; /* Fed vægt */
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 700; /* Fed vægt */
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Eksempel på forskellige skrifttyper for forskellige elementer */
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif; /* Skrifttype for overskrifter */
+}
+
+p, li, span {
+    font-family: 'Arial', sans-serif; /* Skrifttype for paragraf og listeelementer */
+}
+
+/* Nav styling */
+
+.site-header {
+    background-color: #011826;
+    padding: 10px 0;
+}
+
+.container-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 40px;
+}
+
+.site-logo img {
+    max-height: 100px;
+    /* Adjust the height of the logo if needed */
+}
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.main-navigation ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.main-navigation ul li {
+    margin-right: 50px;
+}
+
+.main-navigation ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main-navigation ul li a:hover {
+    text-decoration: underline;
+}
+
+.language-switcher-container {
+    margin-left: 20px;
+}
+
+.language-switcher {
+    background-color: #011826;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+/* Footer Styling */
+.site-footer {
+    background-color: #011826; /* Same color as your nav */
+    color: #fff;
+    padding: 20px 0;
+    height: auto; /* Adjust height if needed */
+}
+
+.container-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+    margin: 20px 40px;
+    
+}
+
+.footer-logo {
+    flex: 1;
+    display: flex;
+    align-items: flex-start; /* Align logo to the top */
+    max-width: 500px; /* Adjust size as needed */
+    width: 100%; /* Adjust size as needed */
+}
+
+.footer-logo .site-logo img {
+    max-width: 500px; /* Adjust size as needed */
+    width: 100%; /* Adjust size as needed */
+}
+
+.footer-content {
+    flex: 3;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start; /* Align items to the top */
+    justify-content: space-between;
+}
+
+.footer-navigation,
+.footer-social,
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between items */
+}
+
+.footer-navigation a,
+.footer-social a,
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-navigation ul,
+.footer-social,
+.footer-links {
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Remove default list styling */
+}
+
+.footer-navigation li,
+.footer-social li,
+.footer-links li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+.footer-navigation a:hover,
+.footer-social a:hover,
+.footer-links a:hover {
+    text-decoration: underline; /* Hover effect */
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+.social-icon img {
+    width: 24px; /* Adjust as needed */
+    height: 24px; /* Adjust as needed */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+
+
+
+/* Blog Listevisning Styling */
+.blog-list {
+    padding: 60px 40px;
+    background-color: #fafafa;
+}
+
+.blog-list h1 {
+    font-size: 50px;
+    color: #333;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.some-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Space between sections */
+    flex-wrap: wrap; /* Allows wrapping if necessary */
+    margin-bottom: 40px; /* Space below each section */
+}
+
+.post-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 posts per row */
+    gap: 20px; /* Space between posts */
+}
+
+.post {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    min-height: 300px; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+}
+
+.post img {
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    object-fit: cover;
+}
+
+
+.post-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    color: #fff;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.post h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.post h2 a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.post h2 a:hover {
+    text-decoration: underline;
+}
+
+.excerpt {
+    font-size: 16px;
+    color: #ddd;
+    display: none;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 40px;
+}
+
+
+
+/* Blog Enkeltindlæg Styling */
+.single-post {
+    padding: 60px 20px;
+    background-color: #ffffff;
+}
+
+.single-post .post {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.single-post h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.post-meta {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.post-content {
+    font-size: 18px;
+    color: #444;
+    line-height: 1.8;
+}
+
+/* Kommentar-sektion */
+.comments-area {
+    margin-top: 40px;
+}
+
+.comments-title {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.comment-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comment {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.comment-author {
+    font-weight: bold;
+}
+
+.comment-content {
+    margin: 10px 0;
+}
+
+.comment-form {
+    margin-top: 20px;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.comment-form button {
+    background-color: #0073e6;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.comment-form button:hover {
+    background-color: #005bb5;
+}
+
+
+/* Kategorier og Tags Styling */
+.post-meta {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.post-categories,
+.post-tags {
+    margin-bottom: 10px;
+}
+
+.post-categories strong, .post-tags strong {
+    display: none;
+}
+
+.post-categories a{
+    text-decoration: none;
+    color:  #8AB0BF;
+}
+
+.post-categories strong,
+.post-tags strong {
+    color: #333;
+}
+
+.post-tags a {
+    background-color: #9DA65D;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.post-tags a:hover {
+    background-color: #e0e0e0;
+}
+
+
+/* 404 Page Styling */
+.error-404 {
+    text-align: center;
+    padding: 50px;
+}
+
+.error-404 h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.error-404 p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.error-404 ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.error-404 ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.error-404 ul li a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+.error-404 ul li a:hover {
+    text-decoration: underline;
+}
+
+.image-row { 
+    display: flex;
+    justify-content: left; /* Sørger for lige afstand mellem billederne */
+    gap: 20px; /* Afstand mellem billederne */
+    margin-bottom: 40px; /* Ekstra afstand under billedrække */
+    max-width: 100%; /* Gør, at containeren ikke overskrider sidens bredde */
+    padding: 20px;
+}
+
+.section-image {
+    
+    max-width: 350px; /* Sætter en maks. bredde på billederne */
+    height: auto; /* Beholder billedets proportioner */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tilføjer en subtil skygge */
+}
+
+
+
+
+.support-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.support-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Tilføj eventuel styling for Contact Form 7 formular */
+.wpcf7-form {
+    max-width: auto;
+    margin: 0 auto;
+}
+
+
+
+.language-switcher-container {
+    width: 100%; /* Sørger for at dropdown-menuen er tilgængelig i fuld bredde */
+}
+
+.language-switcher {
+    padding: 5px;
+    margin: 0;
+    border: 1px solid #000;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #000;
+    font-size: 14px;
+    cursor: pointer;
+    width: auto; /* Dropdown-menuen vil have en automatisk bredde, der passer til indholdet */
+    display: flex;
+    
+}
+
+
+/* Styling for de forskellige sektioner på forsiden */
+
+.four-sections-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px; /* Adjust gap between sections as needed */
+    flex-wrap: wrap; /* Allows wrapping if necessary */
+    margin: 40px;
+    padding: 20px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center content horizontally */
+    text-align: center; /* Center text */
+    max-width: 500px; /* Adjust as needed */
+}
+
+.section-text {
+    margin-right: 10px; /* Adjust spacing between text and image */
+    font-size: 24px;
+    font-weight: 500;
+    
+}
+
+.section-image {
+    width: 100%; /* Makes the image take up the full width of its container */
+    height: 100%; /* Fixed height, adjust as needed */
+    object-fit: cover; /* Crops the image to cover the entire container */
+    display: block; /* Ensures no extra space below the image */
+}
+
+
+/* Styling for blogsektionen på blogsiden */
+
+.blog-section {
+    display: flex;
+    gap: 20px; /* Adjust spacing between the two blog sections */
+    flex-wrap: wrap; /* Wraps content if there's not enough space */
+    margin-bottom: 40px; /* Space below each blog section */
+    margin-top: 40px;
+}
+
+.blog-1, .blog-2 {
+    width: 40%; /* Adjust width as needed */
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center;
+    
+}
+
+.blog-image {
+    width: 100%; /* Makes the image take up the full width of its container */
+    height: 700px; /* Fixed height, adjust as needed */
+    object-fit: cover; /* Crops the image to cover the entire container */
+    display: block; /* Ensures no extra space below the image */
+}
+
+
+.blog-1-text, .blog-2-text {
+    margin-bottom: 10px; /* Space between text and image */
+    text-align: center; /* Center text */
+    
+}
+
+.blogpost-1-link, .blogpost-2-link {
+    display: block;
+    text-align: center;
+    margin-top: 10px; /* Space above the link */
+    color: #0073aa; /* Adjust link color */
+    text-decoration: none;
+}
+
+.blogpost-1-link:hover, .blogpost-2-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.social-media-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    gap: 10px; /* Space between icons */
+}
+
+.social-i {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text below icon */
+    color: #000000; /* Text color */
+    text-decoration: none; /* Remove underline from text */
+}
+
+.social-i img {
+    width: 50px; /* Size of the icons */
+    height: 50px; /* Size of the icons */
+    margin-bottom: 5px; /* Space between icon and text */
+}
+
+.social-i span {
+    font-size: 14px; /* Font size for text */
+    color: #000000;
+}
+
+
+/* de to blog post på forsiden */
+/* Blog Section Styling */
+.blog-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    margin: 40px;
+}
+
+.blog-item {
+    flex: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    overflow: hidden;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-image-container {
+    overflow: hidden;
+}
+
+.blog-image {
+    width: 100%;
+    height: 200px; /* Adjust as needed */
+    object-fit: cover;
+}
+
+.blog-text {
+    padding: 20px;
+    text-align: center;
+}
+
+.blog-link {
+    display: block;
+    padding: 10px 20px;
+    margin: 10px 20px;
+    color: #fff;
+    background-color: #0073e6; /* Adjust as needed */
+    text-decoration: none;
+    text-align: center;
+}
+
+.blog-link:hover {
+    background-color: #005bb5; /* Adjust as needed */
+    text-decoration: underline;
+}
+
+
+.want-to-know-more {
+    margin: 40px;
+    padding: 20px;
+}
