@@ -504,12 +504,13 @@ p, li, span {
     padding: 20px;
 }
 
+
+
 .section {
     display: flex;
     flex-direction: column; /* Stack image and text vertically */
     align-items: center; /* Center content horizontally */
     text-align: center; /* Center text */
-    max-width: 500px; /* Adjust as needed */
 }
 
 .section-text {
