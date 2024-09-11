@@ -54,35 +54,6 @@ get_header();
             <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
         <?php endif; ?>
 
-        <!-- Social Media Icons Section -->
-            <div class="social-media-icons">
-                <?php
-                // Retrieve ACF fields for Instagram
-                $instagram_icon = get_field('instagram_icon', get_option('page_for_posts'));
-                $instagram_name = get_field('instagram_name', get_option('page_for_posts'));
-
-                // Display Instagram icon and name if available
-                if ($instagram_icon) {
-                    echo '<a href="' . esc_url($instagram_icon['url']) . '" target="_blank" class="social-i">';
-                    echo '<img src="' . esc_url($instagram_icon['icon']) . '" alt="' . esc_attr($instagram_name) . '">';
-                    echo '<span>' . esc_html($instagram_name) . '</span>';
-                    echo '</a>';
-                }
-
-                // Retrieve ACF fields for Facebook
-                $facebook_icon = get_field('facebook_icon', get_option('page_for_posts'));
-                $facebook_name = get_field('facebook_name', get_option('page_for_posts'));
-
-                // Display Facebook icon and name if available
-                if ($facebook_icon) {
-                    echo '<a href="' . esc_url($facebook_icon['url']) . '" target="_blank" class="social-i">';
-                    echo '<img src="' . esc_url($facebook_icon['icon']) . '" alt="' . esc_attr($facebook_name) . '">';
-                    echo '<span>' . esc_html($facebook_name) . '</span>';
-                    echo '</a>';
-                }
-                ?>
-            </div>
-
 
     </div>
 </div>

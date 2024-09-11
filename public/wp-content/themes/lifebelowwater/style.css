@@ -347,7 +347,7 @@ p, li, span {
 }
 
 .comment-form button {
-    background-color: #0073e6;
+    background-color: #042940;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -356,7 +356,7 @@ p, li, span {
 }
 
 .comment-form button:hover {
-    background-color: #005bb5;
+    background-color: #8AB0BF;
 }
 
 
@@ -387,7 +387,7 @@ p, li, span {
 }
 
 .post-tags a {
-    background-color: #9DA65D;
+    background-color: #8AB0BF;
     padding: 5px 10px;
     border-radius: 3px;
     text-decoration: none;
@@ -395,7 +395,7 @@ p, li, span {
 }
 
 .post-tags a:hover {
-    background-color: #e0e0e0;
+    background-color: #042940;
 }
 
 
@@ -434,45 +434,6 @@ p, li, span {
     text-decoration: underline;
 }
 
-.image-row { 
-    display: flex;
-    justify-content: left; /* Sørger for lige afstand mellem billederne */
-    gap: 20px; /* Afstand mellem billederne */
-    margin-bottom: 40px; /* Ekstra afstand under billedrække */
-    max-width: 100%; /* Gør, at containeren ikke overskrider sidens bredde */
-    padding: 20px;
-}
-
-.section-image {
-    
-    max-width: 350px; /* Sætter en maks. bredde på billederne */
-    height: auto; /* Beholder billedets proportioner */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Tilføjer en subtil skygge */
-}
-
-
-
-
-.support-section {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin: 20px 0;
-}
-
-.support-title {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* Tilføj eventuel styling for Contact Form 7 formular */
-.wpcf7-form {
-    max-width: auto;
-    margin: 0 auto;
-}
-
 
 
 .language-switcher-container {
@@ -498,35 +459,57 @@ p, li, span {
 
 .four-sections-container {
     display: flex;
-    justify-content: space-between;
-    gap: 10px; /* Adjust gap between sections as needed */
-    flex-wrap: wrap; /* Allows wrapping if necessary */
+    flex-wrap: wrap;
+    gap: 20px; /* Space between sections */
+    padding: 20px; /* Optional padding around the container */
     margin: 40px;
-    padding: 20px;
 }
-
-
 
 .section {
-    display: flex;
-    flex-direction: column; /* Stack image and text vertically */
-    align-items: center; /* Center content horizontally */
-    text-align: center; /* Center text */
+    flex: 1;
+    min-width: 220px; /* Minimum width of each section */
+    max-width: 24%; /* Max width to ensure they fit in the container */
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    background-color: #f9f9f9; /* Background color for the sections */
+    border: 1px solid #ddd; /* Optional border around each section */
+    height: 300px; /* Ensure each section has a fixed height */
 }
 
-.section-text {
-    margin-right: 10px; /* Adjust spacing between text and image */
-    font-size: 24px;
-    font-weight: 500;
-    
+.section a {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .section-image {
-    width: 100%; /* Makes the image take up the full width of its container */
-    height: 100%; /* Fixed height, adjust as needed */
-    object-fit: cover; /* Crops the image to cover the entire container */
-    display: block; /* Ensures no extra space below the image */
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire area */
 }
+
+.section-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    color: #333;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for text */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Shadow to lift the text area */
+    box-sizing: border-box;
+    font-size: 24px;
+    font-weight: 700; /* Fed vægt */
+}
+
+.section:hover {
+    transform: scale(1.02); /* Let zoom-effekt */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Mørkere skygge ved hover */
+}
+
+
+
 
 
 /* Styling for blogsektionen på blogsiden */
@@ -537,6 +520,7 @@ p, li, span {
     flex-wrap: wrap; /* Wraps content if there's not enough space */
     margin-bottom: 40px; /* Space below each blog section */
     margin-top: 40px;
+    
 }
 
 .blog-1, .blog-2 {
@@ -573,88 +557,62 @@ p, li, span {
     text-decoration: underline; /* Underline on hover */
 }
 
-.social-media-icons {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Align items to the left */
-    gap: 10px; /* Space between icons */
-}
-
-.social-i {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center items horizontally */
-    text-align: center; /* Center text below icon */
-    color: #000000; /* Text color */
-    text-decoration: none; /* Remove underline from text */
-}
-
-.social-i img {
-    width: 50px; /* Size of the icons */
-    height: 50px; /* Size of the icons */
-    margin-bottom: 5px; /* Space between icon and text */
-}
-
-.social-i span {
-    font-size: 14px; /* Font size for text */
-    color: #000000;
-}
 
 
 /* de to blog post på forsiden */
-/* Blog Section Styling */
-.blog-section-forside {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
+.box-section {
     margin: 40px;
+    padding: 20px;
 }
 
-.blog-item {
-    flex: 1;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
+.box-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.box {
+    position: relative;
     overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex: 1 1 48%; /* Each box will take up 48% of the container's width */
     min-height: 300px;
     display: flex;
     flex-direction: column;
 }
 
-.blog-image-container {
-    overflow: hidden;
-}
-
-.blog-image {
+.box-image {
     width: 100%;
-    height: 200px; /* Adjust as needed */
+    height: 300px;
     object-fit: cover;
 }
 
-.blog-text {
+.box-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     padding: 20px;
-    text-align: center;
-}
-
-.blog-link {
-    display: block;
-    padding: 10px 20px;
-    margin: 10px 20px;
     color: #fff;
-    background-color: #0073e6; /* Adjust as needed */
-    text-decoration: none;
-    text-align: center;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 24px;
+    margin: 0;
 }
 
-.blog-link:hover {
-    background-color: #005bb5; /* Adjust as needed */
-    text-decoration: underline;
+.box:hover {
+    transform: scale(1.02); /* Let zoom-effekt */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Mørkere skygge ved hover */
 }
+
+
 
 
 .want-to-know-more {
-    margin: 40px;
-    padding: 20px;
+    margin: 0 40px;
+    padding: 0 20px;
 }
 
 /* Quiz */
