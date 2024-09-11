@@ -26,8 +26,9 @@ h3 {
 }
 
 p {
-    font-size: 18px;
-    line-height: 1.6;
+    font-size: 1.2em; /* Størrelse af beskrivelsen */
+    color: #555; /* Mellemgrå farve for teksten */
+    line-height: 1.5; /* Linjeafstand for bedre læsbarhed */
 }
 
 /* Eksempel på forskellige skrifttyper for forskellige elementer */
@@ -655,3 +656,96 @@ p, li, span {
     margin: 40px;
     padding: 20px;
 }
+
+/* Quiz */
+
+/* Stil quizformen */
+.wpcf7-form {
+    background-color: #f8f8f8; /* Lys grå baggrund */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Stil inputfelter */
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form textarea {
+    width: 98%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+/* Stil quiz spørgsmål */
+.wpcf7-form .wpcf7-quiz {
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.wpcf7-list-item {
+    margin-bottom: 50px;
+}
+
+/* Stil submit knappen */
+.wpcf7-form input[type="submit"] {
+    background-color: #3E6E8C;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.wpcf7-form input[type="submit"]:hover {
+    background-color: #042940;
+}
+
+input[type="radio" i] {
+   display: none;
+}
+input[type="radio"] + span {
+    position: relative;
+    padding-left: 30px;
+    display: inline-block;
+}
+
+input[type="radio"] + span:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    background: #fff;
+    transform: translateY(-50%);
+}
+
+/* Vis valgte knapper med en fyldt cirkel */
+input[type="radio"]:checked + span:before {
+    background: #3E6E8C ; /* Vælg en farve til den valgte knap */
+}
+
+/* Style for the quiz title */
+.quiz-area h1 {
+    font-size: 2em; /* Størrelse af titlen */
+    color: #333; /* Mørkegrå farve for teksten */
+    margin: 40px; /* Afstand under titlen */;
+
+}
+
+.quiz-area p:not(.quiz-form p){
+    font-size: 1.2em; /* Størrelse af beskrivelsen */
+    color: #555; /* Mellemgrå farve for teksten */
+    line-height: 1.5; /* Linjeafstand for bedre læsbarhed */
+    margin: 40px; /* Afstand under beskrivelsen */
+}
+
+

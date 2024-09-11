@@ -1,27 +1,23 @@
 <?php
-/* Template Name: Model */
-get_header();
-?>
+/* 
+Template Name: Quiz Template
+*/
 
-<div class="content">
+get_header(); ?>
 
-    <!-- Model Section -->
-    <div class="model-section">
-        <?php
-        // ACF felter for Model-siden
-        $model_titel = get_field('model_titel');
-        $model_content = get_field('model_content');
+<div class="quiz-area">
+    <div class="quiz-main">
 
-        if ($model_titel) {
-            echo '<h1 class="model-title">' . esc_html($model_titel) . '</h1>';
-        }
+        <!-- Vis quiz-titel fra ACF -->
+        <h1><?php the_field('quiz_titel'); ?></h1>
 
-        if ($model_content) {
-            echo '<div class="model-content">' . wp_kses_post($model_content) . '</div>';
-        }
-        ?>
-    </div>
+        <p><?php the_field('quiz_description'); ?></p>
 
-</div>
+        <!-- Tilføj quiz-formen her -->
+        <?php echo do_shortcode('[contact-form-7 id="18dc239" title="Quiz" html_class="quiz-form"]'); ?>
+
+    </div><!-- .quiz-main -->
+</div><!-- .quiz-area -->
 
 <?php get_footer(); ?>
+

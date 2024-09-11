@@ -37,7 +37,7 @@ get_header();
     // Blog 1
     $blog_1_tekst = get_field('blog_1_tekst');
     $blogpost_1_link = get_field('blogpost_1_link');
-    $blog1 = get_field('blog1');
+    $blog_img_1 = get_field('blog_img_1');
 
     echo '<div class="blog-item">';
     if ($blog_1_tekst) {    
@@ -46,9 +46,9 @@ get_header();
     if ($blogpost_1_link && is_string($blogpost_1_link)) {
         echo '<a href="' . esc_url($blogpost_1_link) . '" class="blog-link">Read More</a>';
     }
-    if ($blog1) {
+    if ($blog_img_1) {
         echo '<div class="blog-image-container">';
-        echo '<img src="' . esc_url($blog1['url']) . '" alt="' . esc_attr($blog1['alt']) . '" class="blog-image">';
+        echo '<img src="' . esc_url($blog_img_1['url']) . '" alt="' . esc_attr($blog_img_1['alt']) . '" class="blog-image">';
         echo '</div>';
     }
     echo '</div>'; // Close blog-item
