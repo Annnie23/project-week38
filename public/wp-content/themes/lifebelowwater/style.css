@@ -603,7 +603,7 @@ p, li, span {
 
 /* de to blog post på forsiden */
 /* Blog Section Styling */
-.blog-section {
+.blog-section-forside {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
