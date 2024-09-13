@@ -1,18 +1,15 @@
 <?php
-/* Template Name: Forside */
 get_header();
 ?>
 
 <div class="content">
 
-    <!-- Hero Section -->
 <div class="hero-section">
 <?php
-// ACF kode her for at trække brugerdefineret indhold
+
 if (have_posts()) :
     while (have_posts()) : the_post();
 
-        // Træk ACF-feltet for hero_video ind
         $hero_video = get_field('hero_video');
 
         if ($hero_video) {
@@ -24,7 +21,6 @@ if (have_posts()) :
             echo '</div>';
         }
 
-        // Hero Titel
         $hero_titel = get_field('hero_titel');
         if ($hero_titel) {
             echo '<h1 class="hero-title">' . esc_html($hero_titel) . '</h1>';
@@ -33,37 +29,25 @@ if (have_posts()) :
     endwhile;
 endif;
 ?>
-</div><!-- End hero-section -->
+</div>
 
-
-    
-
-    <!-- Box 1 and 2 Section -->
-    <?php
-// Hent hele grupperne
-$box_1 = get_field('box_1'); // Antag at 'box_1' er navnet på din gruppe
-$box_2 = get_field('box_2'); // Antag at 'box_2' er navnet på din gruppe
-
-// Hent ACF-felter for titler
-$box_1_text = get_field('box_1_text'); // Titel for box 1
-$box_2_text = get_field('box_2_text'); // Titel for box 2
+<?php
+$box_1 = get_field('box_1');
+$box_2 = get_field('box_2');
+$box_1_text = get_field('box_1_text');
+$box_2_text = get_field('box_2_text');
 
 echo '<div class="box-section">';
-
 echo '<div class="box-container">';
-
 if ($box_1) {
-    // Adgang til individuelle felter indenfor 'box_1' gruppen
     $box_1_img = isset($box_1['box_1_img']) ? $box_1['box_1_img'] : null;
     $box_1_link = isset($box_1['box_1_link']) ? $box_1['box_1_link'] : null;
-
     
     echo '<div class="box">';
     if ($box_1_text) {
         echo '<div class="box-title">' . esc_html($box_1_text) . '</div>';
     }
     if ($box_1_img) {
-        // Hvis der er et link, lav billedet klikbart
         if ($box_1_link) {
             echo '<a href="' . esc_url($box_1_link) . '" class="box-link">';
         }
@@ -76,17 +60,14 @@ if ($box_1) {
 }
 
 if ($box_2) {
-    // Adgang til individuelle felter indenfor 'box_2' gruppen
     $box_2_img = isset($box_2['box_2_img']) ? $box_2['box_2_img'] : null;
     $box_2_link = isset($box_2['box_2_link']) ? $box_2['box_2_link'] : null;
-    
 
     echo '<div class="box">';
     if ($box_2_text) {
         echo '<div class="box-title">' . esc_html($box_2_text) . '</div>';
     }
     if ($box_2_img) {
-        // Hvis der er et link, lav billedet klikbart
         if ($box_2_link) {
             echo '<a href="' . esc_url($box_2_link) . '" class="box-link">';
         }
@@ -98,37 +79,23 @@ if ($box_2) {
     echo '</div>';
 }
 
-echo '</div>'; // Luk container div
-echo '</div>'; // Luk box-section div
+echo '</div>';
+echo '</div>';
 ?>
 
-
-
-
-
-
-
-
-    <!-- Want to Know More Section -->
     <?php
     $want_to_know_more = get_field('want_to_know_more');
-
     if ($want_to_know_more) {
         if (is_string($want_to_know_more)) {
             echo '<div class="want-to-know-more"><h2>' . esc_html($want_to_know_more) . '</h2></div>';
         }
     }
-    ?>
+?>
 
-
-
-
-<!-- Four Sections Container -->
 
 <div class="four-sections-container">
 
     <?php
-    // FN's Verdensmål Section
     $billede1_tekst = get_field('billede1_tekst');
     $billede1 = get_field('billede1');
     $billede_1_link = get_field('billede_1_link');
@@ -150,7 +117,6 @@ echo '</div>'; // Luk box-section div
     }
     echo '</div>';
 
-    // World Cleanup Day Section
     $billede2_tekst = get_field('billede2_tekst');
     $billede2 = get_field('billede2');
     $billede_2_link = get_field('billede_2_link');
@@ -172,7 +138,6 @@ echo '</div>'; // Luk box-section div
     }
     echo '</div>';
 
-    // RESEA Project Section
     $billede3_tekst = get_field('billede3_tekst');
     $billede3 = get_field('billede3');
     $billede_3_link = get_field('billede_3_link');
@@ -194,7 +159,6 @@ echo '</div>'; // Luk box-section div
     }
     echo '</div>';
 
-    // Cartel Copenhagen Section
     $billede4_tekst = get_field('billede4_tekst');
     $billede4 = get_field('billede4');
     $billede_4_link = get_field('billede_4_link');
@@ -217,10 +181,6 @@ echo '</div>'; // Luk box-section div
     echo '</div>';
     ?>
 
-</div><!-- Close four-sections-container -->
-
-
-
-</div><!-- Close content -->
-
+</div>
+</div>
 <?php get_footer(); ?>

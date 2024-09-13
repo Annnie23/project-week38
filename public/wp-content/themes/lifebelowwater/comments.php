@@ -7,11 +7,11 @@ if (have_comments()) : ?>
             // Display number of comments
             $num_comments = get_comments_number();
             if ($num_comments === 0) {
-                echo 'No comments yet';
+                echo pll__('No comments yet');
             } elseif ($num_comments > 1) {
-                printf('%d Comments', $num_comments);
+                printf(pll__('%d Comments'), $num_comments);
             } else {
-                echo '1 Comment';
+                echo pll__('1 Comment');
             }
             ?>
         </h2>

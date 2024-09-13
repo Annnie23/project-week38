@@ -707,3 +707,112 @@ input[type="radio"]:checked + span:before {
 }
 
 
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .main-navigation ul {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 20px;
+    }
+
+    .main-navigation ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .post-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-logo {
+        max-width: 300px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container-nav,
+    .container-foot {
+        flex-direction: column;
+        /* align-items: flex-start; */
+        margin: 0;
+    }
+
+    .footer-logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .post-list {
+        grid-template-columns: 1fr;
+    }
+
+    .section-text {
+        font-size: 14px;
+    }
+}
+
+
+
+/* Hide the main navigation and show the burger menu on small screens */
+.main-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none; /* Hide burger menu by default */
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-toggle .menu-icon {
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 4px 0;
+    transition: 0.3s;
+}
+
+/* Media query for small screens */
+@media (max-width: 768px) {
+    .main-navigation {
+        display: none; /* Hide the navigation menu on small screens */
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        right: 0;
+        background-color: #011826;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .menu-toggle {
+        display: flex; /* Show the burger menu on small screens */
+    }
+
+    .main-navigation.active {
+        display: block; /* Show navigation when burger menu is clicked */
+    }
+
+    .main-navigation ul {
+        display: block; /* Display menu items vertically */
+        text-align: center;
+        padding: 0;
+    }
+
+    .main-navigation ul li {
+        margin: 20px 0;
+    }
+
+    .menu-icon.active {
+        background-color: #fff; /* Change color when menu is active */
+    }
+}
+

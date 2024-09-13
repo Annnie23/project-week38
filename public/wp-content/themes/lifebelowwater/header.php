@@ -14,7 +14,12 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/images/logofn.png" alt="<?php bloginfo('name'); ?>">
                 </a>
             </div>
-            <nav class="main-navigation">
+            <div class="menu-toggle" id="menu-toggle">
+                <span class="menu-icon"></span>
+                <span class="menu-icon"></span>
+                <span class="menu-icon"></span>
+            </div>
+            <nav class="main-navigation" id="main-navigation">
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'primary',
@@ -23,16 +28,13 @@
                 ));
                 ?>
 
-                
-<div class="language-switcher-container">
-    <select class="language-switcher" onchange="location = this.value;">
-        <option value="" disabled selected>Select Language</option>
-        <option value="/da/" <?php echo (get_locale() == 'da_DK') ? 'disabled' : ''; ?>>Dansk</option>
-        <option value="/en/" <?php echo (get_locale() == 'en_GB') ? 'disabled' : ''; ?>>English</option>
-    </select>
-</div>
-
-
+                <div class="language-switcher-container">
+                    <select class="language-switcher" onchange="location = this.value;">
+                        <option value="" disabled selected><?php pll_e('Select language'); ?></option>
+                        <option value="<?php echo pll_home_url('da'); ?>" <?php echo (get_locale() == 'da_DK') ? 'disabled' : ''; ?>>Dansk</option>
+                        <option value="<?php echo pll_home_url('en'); ?>" <?php echo (get_locale() == 'en_GB') ? 'disabled' : ''; ?>>English</option>
+                    </select>
+                </div>
             </nav>
         </div>
     </header>
